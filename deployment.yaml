@@ -1,0 +1,19 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: national-tsa
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: national-tsa
+  template:
+    metadata:
+      labels:
+        app: national-tsa
+    spec:
+      containers:
+      - name: national-tsa
+        image: gcr.io/national-tsa/national-tsa
+        ports:
+        - containerPort: 8080

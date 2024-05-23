@@ -2,12 +2,20 @@
   <modelVersion>4.0.0</modelVersion>
   <groupId>com.aarish</groupId>
   <artifactId>national-tsa</artifactId>
-  <version>0.0.1-SNAPSHOT</version>
+  <version>0.0.1</version>
   <properties>
         <maven.compiler.source>17</maven.compiler.source>
         <maven.compiler.target>17</maven.compiler.target>
         <javafx.version>20.0.0</javafx.version> 
     </properties>
+ <dependencies>   
+    <!-- https://mvnrepository.com/artifact/javazoom/jlayer -->
+<dependency>
+    <groupId>javazoom</groupId>
+    <artifactId>jlayer</artifactId>
+    <version>1.0.1</version>
+</dependency>
+</dependencies>
 
     <build>
         <plugins>
@@ -32,6 +40,20 @@
                     </execution>
                 </executions>
             </plugin>
+            
+             <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-jar-plugin</artifactId>
+        <version>3.2.0</version>
+        <configuration>
+          <archive>
+            <manifest>
+              <addClasspath>true</addClasspath>
+              <mainClass>main.MainClass</mainClass>
+            </manifest>
+          </archive>
+        </configuration>
+      </plugin>
         </plugins>
     </build>
   
